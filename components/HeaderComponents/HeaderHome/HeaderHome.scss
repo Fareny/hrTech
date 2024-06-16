@@ -1,0 +1,61 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.header {
+	.header__homepage {
+		width: fit-content;
+		margin: 0 auto;
+
+		.header__homepage-preview.homepage-preview {
+			@include mixins.flexBlock($align: center, $justify: center);
+			flex-direction: column;
+			margin: 84px auto;
+
+			.homepage-preview__tagline {
+				font-size: 40px;
+				margin-bottom: 12px;
+			}
+			.homepage-preview__search {
+				margin-bottom: 24px;
+			}
+
+			.homepage-preview__next {
+				background: unset;
+				border: unset;
+				padding: 0;
+				cursor: pointer;
+
+				.homepage-preview__next-icon {
+					@include mixins.hover() {
+						transform: translateY(6px);
+					}
+				}
+			}
+		}
+		.header__homepage-statistics.homepage-statistics {
+			@include mixins.flexBlock($align: center, $justify: space-between);
+
+			.homepage-statistics__item {
+				@include mixins.flexBlock($align: center, $justify: center);
+				flex-direction: column;
+
+				&:first-child {
+					align-items: flex-start;
+				}
+
+				&:last-child {
+					align-items: flex-end;
+				}
+
+				.homepage-statistics__item-value {
+					font-size: 20px;
+				}
+
+				.homepage-statistics__item-label {
+					font-size: 16px;
+				}
+			}
+		}
+
+	}
+}

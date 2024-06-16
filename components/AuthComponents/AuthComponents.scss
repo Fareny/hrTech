@@ -1,0 +1,231 @@
+@use '@/assets/variables.scss' as variables;
+
+// TODO: Подкорректирвать числа в пикселях под общий проект, и продумать мобильную версию
+
+.auth {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    color: variables.$color-light-dark;
+    background-color: variables.$color-blue-white;
+}
+
+.auth__title {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    color: #1d2129;
+    font-size: 35px;
+}
+
+.auth__form-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.auth__container {
+    max-width: 800px;
+    height: 500px;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0 14px 28px -10px rgba(0, 0, 0, 0.1), 0 10px 10px -10px rgba(0, 0, 0, 0.02);
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: variables.$color-white;
+    width: 50%;
+    min-width: 400px;
+    padding: 20px 40px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.auth__info {
+    background: linear-gradient(-45deg, #FFCF00 0%, #FC4F4F 100%) no-repeat 0 0 / 200%;
+    width: 50%;
+    min-width: 400px;
+    height: 100%;
+    border-radius: 0px 20px 20px 0px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth__form-button {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ff4b2b;
+    background: #ff4b2b;
+    color: variables.$color-white;
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes auth__spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.auth__form__loading-icon {
+    animation: auth__spin 1s linear infinite;
+}
+
+.auth__inputs {
+    position: relative;
+    width: 100%;
+}
+
+.auth__input {
+    width: 100%;
+
+    &::placeholder {
+        color: variables.$color-placeholder-gray;
+    }
+
+    .input__input {
+        background: variables.$color-white-gray;
+        border: none;
+        padding: 10px 14px;
+        margin: 8px 0;
+        border-radius: 0px;
+    }
+}
+
+.auth__input-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    transform: translate(-50%, -50%);
+}
+
+.auth__checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.auth__checkbox-text {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.auth-checkbox__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.auth__forgot,
+.auth__checkbox {
+    color: variables.$color-gray-shadow;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.auth-info__title {
+    font-size: 35px;
+    color: variables.$color-white;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.auth-info__text {
+    font-size: 14px;
+    color: variables.$color-white;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.auth-info__button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    border-radius: 40px;
+    background-color: transparent;
+    border: 1px solid variables.$color-white;
+    padding: 10px 25px;
+    text-decoration: none;
+}
+
+.auth-info__button-text {
+    color: variables.$color-white;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1px;
+}
+
+.auth-info__button-arrow {
+    transform: rotate(-180deg);
+}
+
+.auth__form-link {
+    display: none;
+    text-decoration: underline;
+    color: variables.$color-gray-shadow;
+}
+
+@media screen and (max-width: 820px) {
+    .auth__container {
+        border-radius: 0;
+    }
+
+    .auth__form {
+        border-radius: 0;
+    }
+
+    .auth-info {
+        display: none;
+    }
+
+    .auth__form-link {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .auth__section {
+        background-color: transparent
+    }
+
+    .auth__container {
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: transparent
+    }
+
+    .auth__form {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: transparent;
+        // padding: 10px 20px;
+    }
+}

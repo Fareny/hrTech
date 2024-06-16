@@ -1,0 +1,55 @@
+.create-vacancy__section {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.create-vacancy {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.create-vacancy__inputs {
+    display: flex;
+    gap: 12px;
+}
+
+.create-vacancy__input {
+    width: 100%;
+}
+
+.create-vacancy__buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.create-vacancy__button {
+    max-width: 300px;
+}
+
+.logo-upload {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.create-vacancy__input_vacancy {
+    width: 100%;
+}
+
+.logo-preview {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}

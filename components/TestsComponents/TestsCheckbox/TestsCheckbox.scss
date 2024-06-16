@@ -1,0 +1,37 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.tests-checkbox {
+	@include mixins.flexBlock($align: flex-start, $justify: flex-start, $gap: 6px);
+	flex-direction: column;
+
+	.tests-checkbox__item {
+		@include mixins.flexBlock($align: center, $justify: flex-start, $gap: 6px);
+
+		.tests-checkbox__delete {
+			cursor: pointer;
+			opacity: 0.6;
+			@include mixins.elemResolutionOptions(16px, 16px);
+
+			@include mixins.hover() {
+				opacity: 1;
+			}
+		}
+	}
+
+	.tests-checkbox__add {
+		padding: 4px;
+		color: variables.$color-text;
+		aspect-ratio: 1;
+
+		@include mixins.hover() {
+			background-color: rgba(variables.$color-text, 0.1);
+		}
+	}
+
+	.tests-checkbox__note {
+		color: variables.$color-text-transparent;
+		padding-top: 24px;
+	}
+}
+

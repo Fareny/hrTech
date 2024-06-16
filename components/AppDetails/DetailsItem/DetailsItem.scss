@@ -1,0 +1,30 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.details__content-item {
+	@include mixins.flexBlock($justify: flex-start, $align: center, $gap: 4px);
+	color: variables.$color-text;
+	padding: 8px 12px;
+	cursor: pointer;
+	white-space: nowrap;
+
+	&:hover {
+		color: variables.$color-dark-blue;
+		background: #f8f8f8;
+		transition: variables.$transition-base;
+	}
+
+	.icon {
+		width: 20px;
+		height: 20px;
+		opacity: 0;
+	}
+
+	&_active .icon {
+		opacity: 1;
+	}
+
+	&_no-clickable {
+		pointer-events: none;
+	}
+}

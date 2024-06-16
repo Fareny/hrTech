@@ -1,0 +1,47 @@
+@use '@/assets/variables.scss' as variables;
+
+.negotiation-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.negotiation-table__vacancy {
+
+    &:hover {
+        color: variables.$color-dark-blue;
+    }
+}
+
+.negotiation-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.negotiation-table th,
+.negotiation-table td {
+    padding: 8px;
+}
+
+.negotiation-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}
+
+.status-red {
+    color: red;
+}
+
+.status-grey {
+    color: grey;
+}
+
+.status-green {
+    color: green;
+}
+
+.favourites__empty {
+    margin-top: 20px;
+    font-size: 16px;
+    color: grey;
+}

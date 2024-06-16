@@ -1,0 +1,12 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.experience-header__content {
+	@include mixins.flexBlock($justify: flex-start, $align: flex-start, $gap: 12px);
+	flex-direction: column;
+
+	.input,
+	.select {
+		width: 100%;
+	}
+}

@@ -1,0 +1,19 @@
+.chat__modal {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.chat__modal_fields {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+}
+
+.chat__modal_field {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 6x;
+}

@@ -1,0 +1,65 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.test-page {
+	.test-page__title {
+		@include mixins.flexBlock($align: center, $justify: space-between);
+		margin-bottom: 24px;
+	}
+
+	.test-page__fields {
+		.test-page__field {
+			margin-bottom: 12px;
+
+			.test-page__header {
+				@include mixins.flexBlock($align: center, $justify: space-between);
+				margin-bottom: 6px;
+
+				.test-page__position {
+					color: variables.$color-text-transparent;
+
+					&_required {
+						&::after {
+							content: '*';
+							color: variables.$color-red;
+							padding-left: 2px;
+						}
+					}
+				}
+
+				.test-page__delete-field {
+					padding: 0;
+
+					svg {
+						width: 18px;
+						height: 18px;
+						opacity: 0.6;
+						@include mixins.elemResolutionOptions(16px, 16px);
+
+						@include mixins.hover() {
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			.test-page__name {
+				margin-bottom: 12px;
+
+				&_required {
+					&::after {
+						content: '*';
+						color: variables.$color-red;
+						padding-left: 2px;
+					}
+				}
+			}
+		}
+	}
+
+	.test-page-button {
+		display: block;
+		margin-left: auto;
+	}
+}
+

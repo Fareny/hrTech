@@ -1,0 +1,32 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@mahdikhashan/vue3-click-outside": "^0.1.2",
+    "@pinia/nuxt": "^0.5.1",
+    "axios": "^1.6.8",
+    "crypto-browserify": "^3.12.0",
+    "nuxt": "^3.11.2",
+    "nuxt3-socket.io": "^0.3.1",
+    "pinia": "^2.1.7",
+    "sass": "^1.77.0",
+    "socket.io-client": "^4.7.5",
+    "stream-browserify": "^3.0.0",
+    "uuid": "^9.0.1",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0",
+    "vue3-toastify": "^0.2.1"
+  },
+  "devDependencies": {
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
+    "sass": "^1.77.0"
+  }
+}

@@ -1,0 +1,34 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.main__search {
+	margin-bottom: 12px;
+
+	.main-search__actions {
+		@include mixins.flexBlock($justify: flex-start, $align: center);
+		margin-bottom: 12px;
+
+		.search {
+			margin-right: 24px;
+
+			.input {
+				width: 100%;
+			}
+		}
+
+		.main-search__action:not(:last-child) {
+			margin-right: 12px;
+		}
+
+		.details {
+			.details__summary {
+				@include mixins.flexBlock($justify: flex-start, $align: center, $gap: 4px);
+			}
+		}
+	}
+
+	.main-search__vacancy-count {
+		color: variables.$color-text-2;
+		font-size: 18px;
+	}
+}

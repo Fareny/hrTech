@@ -1,0 +1,12 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.textarea__input {
+	padding: 12px;
+	border: 1px solid variables.$color-gray;
+	border-radius: 8px;
+	resize: none;
+	outline: none;
+	width: 100%;
+	max-width: 100%;
+}

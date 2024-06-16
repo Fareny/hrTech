@@ -1,0 +1,15 @@
+.main-content {
+	display: grid;
+	grid-template-columns: 282px 1fr 282px;
+	gap: 12px;
+
+	.section {
+		height: fit-content;
+	}
+
+	.main-content__events,
+	.main-content__filters {
+		position: sticky;
+		top: 12px;
+	}
+}

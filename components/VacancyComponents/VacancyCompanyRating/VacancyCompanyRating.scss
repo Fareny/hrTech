@@ -1,0 +1,12 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.vacancy__company-rating {
+	@include mixins.flexBlock($justify: flex-end, $align: center, $gap: 6px);
+
+	.company-rating__icon {
+		svg {
+			fill: #FFE500;
+		}
+	}
+}

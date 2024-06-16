@@ -1,0 +1,56 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.main-content__filters {
+	.filter {
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+
+		.dropdown__summary {
+			@include mixins.flexBlock($justify: flex-start, $align: center, $gap: 6px);
+			color: variables.$color-placeholder;
+			text-transform: uppercase;
+		}
+
+		.filter__item {
+			@include mixins.flexBlock($justify: space-between, $align: center);
+
+			.filter__item-count {
+				font-size: 14px;
+				color: variables.$color-text-2;
+			}
+
+			&_custom {
+				flex-wrap: wrap;
+
+				.filter__item-checkbox {
+					margin-bottom: 6px;
+				}
+
+				.filter__item-input {
+					margin-left: 12px;
+				}
+			}
+		}
+	}
+
+	.filter__apply {
+		width: 100%;
+		margin-bottom: 12px;
+	}
+
+	.filter__reset {
+		display: block;
+		width: 100%;
+		text-align: center;
+		cursor: pointer;
+		color: variables.$color-text-transparent;
+
+		@include mixins.hover() {
+			color: variables.$color-text;
+		}
+	}
+}
+
+

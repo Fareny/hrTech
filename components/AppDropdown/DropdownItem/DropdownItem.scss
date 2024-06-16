@@ -1,0 +1,8 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.dropdown__content-item {
+	&:not(:last-child) {
+		margin-bottom: 6px;
+	}
+}

@@ -1,0 +1,16 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.resume-experience__content {
+	.content-title {
+		@include mixins.flexBlock($align: center, $justify: flex-start);
+		margin-bottom: 24px;
+
+		.content-title__overall-time {
+			font-size: 24px;
+			color: variables.$color-light-dark-transparent;
+			margin-right: 12px;
+		}
+	}
+
+}

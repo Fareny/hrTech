@@ -1,0 +1,71 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.header {
+	margin: 24px auto 12px;
+	max-width: 1164px;
+	padding: 0 24px;
+
+	.header__content {
+		@include mixins.flexBlock($align: center, $justify: space-between);
+
+		.header__content-navigation {
+			@include mixins.flexBlock($align: center, $justify: space-between, $gap: 12px);
+
+			.navigation__logo {
+				@include mixins.flexBlock($align: center, $justify: space-between);
+				text-decoration: none;
+				color: variables.$color-light-dark;
+
+				.navigation__logo-image {
+					width: 36px;
+					height: 36px;
+					background: variables.$color-light-dark;
+					margin-right: 12px;
+				}
+
+				.navigation__logo-title {
+					font-size: 24px;
+				}
+			}
+
+			.navigation-links {
+				@include mixins.flexBlock($gap: 12px);
+
+				.navigation-links__item {
+					text-decoration: none;
+					color: variables.$color-light-dark;
+					font-size: 16px;
+				}
+			}
+		}
+
+		.content-actions {
+			.content-actions__wrapper {
+				@include mixins.flexBlock($gap: 12px);
+
+				&_no-auth {
+					gap: 0;
+				}
+
+				.content-action__notifications {
+					position: relative;
+					z-index: 10;
+				}
+
+				.content-actions__item {
+
+					@include mixins.hover() {
+						opacity: 0.8;
+					}
+
+					.icon {
+						width: 26px;
+						height: 26px;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}

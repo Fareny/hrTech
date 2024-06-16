@@ -1,0 +1,42 @@
+// Размеры шрифта
+$font-size-small: 14px;
+$font-size-medium: 16px;
+$font-size-large: 18px;
+$font-size-xlarge: 20px;
+$font-size-xxlarge: 24px;
+
+// Цвета
+$color-black: #1E1E1E;
+$color-light-dark: #2C2C2C;
+$color-gray-shadow: #333;
+$color-light-dark: #3C4858;
+$color-light-dark-transparent: rgba($color-light-dark, 0.5);
+
+$color-text: #1F2D3D;
+$color-text-2: #8492A6;
+$color-text-transparent: rgba($color-text, 0.5);
+
+$color-light-violet: #6C56E8;
+$color-dark-blue: #007BFF;
+$color-dark-blue-transparent: rgba($color-dark-blue, 0.5);
+
+$color-blue: #1DA1F2;
+$color-light-blue: #B8F1FF;
+$color-blue-white: #EFF2F7;
+
+$color-light-blue: #EFF2F7;
+$color-white: #FFFFFF;
+$color-white-gray: #eee;
+$color-gray: #D3DCE6;
+$color-placeholder: #C2CEDB;
+$color-placeholder-gray: #a9a9a9;
+
+$color-green: #04C500;
+$color-red: #FF0000;
+
+
+// Размеры контейнеров
+$container-width: 1404px;
+
+// Другое
+$transition-base: 0.2s ease-in-out;

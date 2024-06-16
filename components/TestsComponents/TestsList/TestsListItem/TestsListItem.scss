@@ -1,0 +1,60 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.tests__list-item {
+	&.list-item {
+		padding: 36px 0;
+		@include mixins.flexBlock($justify: space-between);
+		@include mixins.horizontalLineAfter($top: 0, $left: 0);
+
+		&:last-child {
+			@include mixins.horizontalLineBefore($bottom: 0, $left: 0);
+		}
+
+		.list-item__container {
+			padding: 0 24px;
+			@include mixins.flexBlock($gap: 24px);
+
+			.list-item__title {
+				color: variables.$color-text;
+				text-decoration: none;
+				font-size: 24px;
+			}
+
+			.list-item__links {
+				@include mixins.flexBlock($justify: flex-start, $gap: 12px);
+
+				.list-item__link {
+					font-size: 16px;
+					color: variables.$color-dark-blue;
+					text-decoration: none;
+					padding: 0;
+
+					&_delete {
+						color: variables.$color-red;
+					}
+				}
+			}
+
+			.list-item__percent {
+				font-size: 16px;
+				color: variables.$color-text-transparent;
+				white-space: nowrap;
+			}
+		}
+
+		.list-item__questions-count {
+			font-size: 24px;
+			margin-right: 24px;
+			white-space: nowrap;
+		}
+
+		.list-item__date-created {
+			position: absolute;
+			right: 12px;
+			bottom: 2px;
+			font-size: 12px;
+			color: variables.$color-text-transparent;
+		}
+	}
+}

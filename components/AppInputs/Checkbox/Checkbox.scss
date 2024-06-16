@@ -1,0 +1,51 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.checkbox {
+	.checkbox__label {
+		@include mixins.flexBlock($justify: flex-start, $align: center, $gap: 6px);
+		font-size: 14px;
+
+		&:before {
+			content: '';
+			display: block;
+			width: 16px;
+			height: 16px;
+			border: 1px solid variables.$color-gray;
+			cursor: pointer;
+			transition: variables.$transition-base;
+		}
+
+		span {
+			margin-top: 2px;
+		}
+	}
+
+	.checkbox__input {
+		display: none;
+
+		&[type="checkbox"]~.checkbox__label:before {
+			border-radius: 6px;
+		}
+
+		&[type="radio"]~.checkbox__label:before {
+			border-radius: 16px;
+		}
+
+		&[type="checkbox"]:checked~.checkbox__label:before {
+			background-color: variables.$color-dark-blue;
+			border: 1px solid variables.$color-dark-blue;
+			background-image: url('/icons/check.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		&[type="radio"]:checked~.checkbox__label:before {
+			border: 5px solid variables.$color-dark-blue;
+		}
+
+		&[disabled]~.checkbox__label {
+			opacity: 0.4;
+		}
+	}
+}

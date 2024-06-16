@@ -1,0 +1,67 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.main-content__vacancies-item {
+	margin-bottom: 12px;
+
+	&.vacancy {
+		cursor: pointer;
+
+		.vacancy__title {
+			display: block;
+			font-size: 24px;
+			margin-bottom: 6px;
+			text-decoration: none;
+		}
+		.vacancy__info {
+			@include mixins.flexBlock($align: center, $justify: flex-start, $gap: 12px);
+			margin-bottom: 6px;
+
+			.vacancy__salary {
+				font-size: 20px;
+			}
+
+			.vacancy__experience {
+				padding: 4px 8px;
+				background: #f3f3f3;
+				font-size: 14px;
+				border-radius: 4px;
+			}
+		}
+
+		.vacancy__company {
+			font-size: 14px;
+			margin-bottom: 12px;
+
+			.vacancy__company-name {
+				@include mixins.flexBlock($align: center, $justify: space-between);
+				width: 100%;
+
+				.vacancy__company-logo {
+					max-width: 48px;
+				}
+			}
+
+			.vacancy__company-location {
+				.vacancy__company-subway {
+					&.company-subway {
+						.company-subway__color {
+							color: var(--subway-color);
+						}
+					}
+				}
+			}
+		}
+
+		.vacancy__details {
+			position: absolute;
+			top: 12px;
+			right: 24px;
+
+			.details__content {
+				right: -12px;
+				left: unset;
+			}
+		}
+	}
+}

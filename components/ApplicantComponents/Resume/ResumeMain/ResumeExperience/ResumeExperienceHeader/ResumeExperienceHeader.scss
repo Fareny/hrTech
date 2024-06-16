@@ -1,0 +1,32 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.resume-experience__header {
+	margin-bottom: 24px;
+
+	&.experience-header {
+		position: relative;
+		width: 100%;
+
+		.experience-header__title .experience-header__title-text,
+		.experience-header__sallary {
+			font-size: 24px;
+		}
+
+		.experience-header__title {
+			@include mixins.flexBlock($justify: flex-start, $align: center, $gap: 12px);
+			margin-right: 12px;
+			margin-bottom: 12px;
+		}
+
+		.icon-edit {
+			margin-right: 24px;
+		}
+
+		.experience-header__sallary {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+}

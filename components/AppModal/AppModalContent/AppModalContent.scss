@@ -1,0 +1,63 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.modal {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background: variables.$color-text-transparent;
+	border: none;
+	outline: none;
+	overflow: auto;
+	z-index: 9999;
+
+	.section {
+		position: relative;
+		max-width: 570px;
+		margin: 48px auto;
+		background: #FFFFFF;
+		border-radius: 16px;
+		padding: 24px;
+
+		.modal__title {
+			font-size: 24px;
+			text-align: center;
+			margin-bottom: 12px;
+			color: variables.$color-text;
+		}
+
+		.modal__content {
+			margin-bottom: 12px;
+
+			.section {
+				padding: 0;
+				margin: 0;
+				background: unset;
+				max-width: 100%;
+			}
+		}
+
+		.modal__actions {
+			@include mixins.flexBlock(center, center, 12px);
+
+			.button:last-child {
+				background: variables.$color-white-gray;
+				color: variables.$color-text;
+			}
+		}
+
+		.modal__close {
+			position: absolute;
+			top: 24px;
+			right: 24px;
+			background: none;
+			border: none;
+			padding: 0;
+
+			.icon {
+				opacity: 1;
+			}
+		}
+	}
+}

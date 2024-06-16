@@ -1,0 +1,113 @@
+@use '@/assets/variables.scss' as variables;
+
+// Настройки flex
+@mixin flexBlock($align: center, $justify: center, $gap: 0) {
+	display: flex;
+	gap: $gap;
+	align-items: $align;
+	justify-content: $justify;
+}
+
+// Настройки анимации
+@mixin initAnimation($name: none, $duration: 0s, $timing-function: ease, $delay: 0s, $fill-mode: none, $iteration-count: 1) {
+	animation: {
+		name: $name;
+		delay: $delay;
+		iteration-count: 1;
+		duration: $duration;
+		fill-mode: $fill-mode;
+		timing-function: $timing-function;
+	}
+}
+
+// Размер элемента
+@mixin elemResolutionOptions($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+// Настройки бордера
+@mixin borderOptions($width, $style, $color, $radius) {
+	border: {
+		width: $width;
+		style: $style;
+		color: $color;
+		radius: $radius;
+	}
+}
+
+// Наведение на элемент, и присваивание базового transition
+@mixin hover() {
+	transition: variables.$transition-base;
+
+	&:hover {
+		@content;
+	}
+}
+
+// Скроллбар
+@mixin scrollBar() {
+	/* scrollbar для Chrome/Edge/Safari */
+	&::-webkit-scrollbar {
+		border-radius: 5px;
+		@include elemResolutionOptions(4px, 4px);
+	}
+
+	&::-webkit-scrollbar-track {
+		background: variables.$color-white-gray;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: variables.$color-gray;
+		@include borderOptions(2px, solid, variables.$color-gray, 5px)
+	}
+}
+
+// Линия before|after
+@mixin horizontalLineBefore($top: auto, $left: auto, $bottom: auto, $right: auto) {
+	position: relative;
+
+	&:before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		top: $top;
+		left: $left;
+		bottom: $bottom;
+		right: $right;
+		height: 1px;
+		background-color: #D3DCE6;
+	}
+}
+@mixin horizontalLineAfter($top: auto, $left: auto, $bottom: auto, $right: auto) {
+	position: relative;
+
+	&:after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		top: $top;
+		left: $left;
+		bottom: $bottom;
+		right: $right;
+		height: 1px;
+		background-color: #D3DCE6;
+	}
+}
+
+// Кастомный текст
+@mixin customText() {
+	p {
+		margin-bottom: 16px;
+	}
+
+	ul {
+		margin-left: 20px;
+		margin-bottom: 16px;
+
+		li {
+			list-style-type: circle;
+			margin-bottom: 5px;
+		}
+	}
+}

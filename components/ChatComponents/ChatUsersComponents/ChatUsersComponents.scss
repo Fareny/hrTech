@@ -1,0 +1,124 @@
+@use '@/assets/variables.scss' as variables;
+
+.chat__users {
+    width: 300px;
+    // border-right: 1px solid variables.$color-gray;
+    overflow: auto;
+    padding-right: 12px;
+}
+
+.chat__users::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat__users::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat__users::-webkit-scrollbar-thumb {
+    background-color: variables.$color-gray;
+    border-radius: 20px;
+}
+
+.chat__user_image_wrapper {
+    position: relative;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.chat__users_dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(151, 170, 184, 0.2);
+    box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.chat__users_image_active {
+    filter: brightness(0.5);
+}
+
+.chat__user {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid variables.$color-gray;
+    cursor: pointer;
+
+    &:first-child {
+        padding-top: 0px;
+    }
+
+    // &:last-child {
+    //     border-bottom: none;
+    //     padding-bottom: 0px;
+    // }
+}
+
+.chat__user_info_wrapper {
+    flex: 1;
+}
+
+.chat__users_image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.chat__user_info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat__user_date {
+    font-size: 14px;
+    color: variables.$color-gray-shadow;
+}
+
+.chat__user_name {
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+}
+
+.chat__user_last_message {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    line-height: 1.2;
+    word-break: break-all;
+}

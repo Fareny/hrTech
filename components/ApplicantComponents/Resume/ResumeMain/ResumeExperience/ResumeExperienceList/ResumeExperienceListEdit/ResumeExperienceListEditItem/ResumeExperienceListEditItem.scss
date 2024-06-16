@@ -1,0 +1,63 @@
+@use 'assets/variables' as variables;
+@use 'assets/mixins' as mixins;
+
+.experience-edit {
+	.edit-item {
+		@include mixins.flexBlock($align: flex-start, $justify: flex-start, $gap: 12px);
+		flex-direction: column;
+		margin-bottom: 48px;
+
+		&:last-of-type {
+			margin-bottom: 12px;
+		}
+
+		.item-month {
+			@include mixins.flexBlock($align: flex-end, $justify: flex-start, $gap: 6px 0);
+			flex-wrap: wrap;
+			width: 100%;
+
+			.select {
+				flex: 50%;
+
+				.input {
+					margin-left: 0;
+				}
+
+				.input__input:first-of-type {
+					border-radius: 6px 0 0 6px;
+				}
+			}
+
+			.input {
+				flex: 50%;
+				margin-left: -1px;
+
+				.input__input {
+					border-radius: 0 6px 6px 0;
+				}
+			}
+
+			.item-month__error,
+			.item-month__checkbox {
+				flex: 1;
+			}
+
+			.item-month__error {
+				color: variables.$color-red;
+				font-size: 14px;
+			}
+
+			.item-month__checkbox {
+				.checkbox__label {
+					justify-content: flex-end;
+				}
+			}
+		}
+
+		.input,
+		.select,
+		.textarea {
+			width: 100%;
+		}
+	}
+}

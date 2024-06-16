@@ -1,0 +1,29 @@
+@use '@/assets/variables.scss' as variables;
+@use '@/assets/mixins.scss' as mixins;
+
+.dropdown {
+	&[open] {
+		.dropdown__summary {
+			.icon-arrow-dropdown {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.dropdown__summary {
+		margin-bottom: 6px;
+		cursor: pointer;
+
+		&::marker {
+			display: none;
+			content: '';
+		}
+
+		.icon-arrow-dropdown {
+			width: 14px;
+			height: 14px;
+			margin-bottom: 2px;
+			transition: variables.$transition-base;
+		}
+	}
+}

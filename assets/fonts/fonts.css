@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'NotoSans';
+    font-display: swap;
+    src: url('~/assets/fonts/NotoSans-Italic-VariableFont.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NotoSansItalic';
+    font-display: swap;
+    src: url('~/assets/fonts/NotoSans-Italic-VariableFont.ttf') format('truetype');
+}
