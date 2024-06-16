@@ -1,5 +1,5 @@
 <template>
-     <AppDetails v-if="chatId !== 'special'" class="vacancy__details">
+     <AppDetails v-if="chatId !== 'special' && userStore.recruiter" class="vacancy__details">
             <template #summary>
               <DotsIcon class="chat__header_dots" />
             </template>

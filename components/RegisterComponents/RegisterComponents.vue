@@ -64,7 +64,7 @@
                             id="job_seeker"
                             name="userType"
                             value="job_seeker"
-                            v-model="credentials.userType"
+                            @changeValue="(val) => credentials.userType = val.id"
                         >
                             <span>Я ищу работу</span>
                         </AppCheckbox>
@@ -73,7 +73,7 @@
                             id="employer"
                             name="userType"
                             value="employer"
-                            v-model="credentials.userType"
+                            @changeValue="(val) => credentials.userType = val.id"
                         >
                             <span>Я ищу сотрудников</span>
                         </AppCheckbox>
@@ -133,6 +133,7 @@
 
     const handleSubmit = async () => { 
         touched.value = true;
+
         try {
             if(credentials.value.username !== '' && 
                 credentials.value.email !== '' && 
@@ -140,7 +141,8 @@
                 credentials.value.userType !== '') {
 
                 loading.value = true;
-                rememberMe.value ? localStorage.setItem('rememberMe', data.user.email) : localStorage.removeItem('rememberMe');
+                rememberMe.value ? localStorage.setItem('rememberMe', credentials.value.email) : localStorage.removeItem('rememberMe');
+
                 const data = await registration(credentials.value);
                 userStore.setAuthInfo(data.isAuth, data.user.email, data.user.username);
 

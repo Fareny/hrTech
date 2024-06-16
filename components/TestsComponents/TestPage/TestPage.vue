@@ -93,7 +93,7 @@
     import AppTextarea from "~/components/AppInputs/Textarea/Textarea.vue";
     import TestsCreateModal from "~/components/TestsComponents/TestsCreate/TestsCreateModal/TestsCreateModal.vue";
     import TestPageComponent from "~/components/TestsComponents/TestPage/TestPageComponent/TestPageComponent.vue";
-    
+
     const props = defineProps({
         test: {
             type: Object,

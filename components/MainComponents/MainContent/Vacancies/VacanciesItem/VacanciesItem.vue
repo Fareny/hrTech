@@ -161,7 +161,6 @@
         if(val.value === 'remove') {
             favourites.value = favourites.value.filter(vacancy => vacancy._id !== props.vacancy._id)
             await removeFavouriteVacancy(props.vacancy._id)
-            // логика загрузки
         }
     }
 

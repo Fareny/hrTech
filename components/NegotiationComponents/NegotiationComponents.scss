@@ -6,6 +6,7 @@
 }
 
 .negotiation-table__vacancy {
+    cursor: pointer;
 
     &:hover {
         color: variables.$color-dark-blue;

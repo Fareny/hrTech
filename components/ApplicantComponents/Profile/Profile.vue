@@ -91,9 +91,11 @@
                             Отмена
                         </AppButton>
                     </div>
-
                 </div>
             </div>
+            <AppButton class="profile__exit__button" @click="handleExit" >
+                Выйти
+            </AppButton>
         </div>
     </section>
 </template>
@@ -104,6 +106,7 @@ import { reactive, onMounted, ref } from 'vue';
 import AppInput from '../../AppInputs/Input/Input.vue';
 import AppButton from '../../AppButton/AppButton.vue';
 import { getMyProfile, profileUpdate, updateProfileAvatar } from '~/http/http';
+import api from "~/http/api.js";
 import ImagePlusIcon from '~/components/AppIcons/ImagePlus.vue';
 import { toast } from 'vue3-toastify';
 
@@ -156,6 +159,11 @@ const toggleEdit = (field) => {
         }
     }
     editMode[field] = !editMode[field];
+};
+
+const handleExit = async () => {
+    navigateTo('/authorization');
+    await api.get('logout');
 };
 
 const saveProfile = async () => {

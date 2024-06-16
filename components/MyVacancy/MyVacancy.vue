@@ -12,7 +12,7 @@
                     v-for="vacancy in myVacancies"
                     :vacancy="vacancy"
                     :key="vacancy.id"
-                    :isRecruiter="true"
+                    :isRecruiter="false"
                 />
             </ul>
             <p v-else class="myVacancy__empty" >У вас нет созданных вакансий</p>

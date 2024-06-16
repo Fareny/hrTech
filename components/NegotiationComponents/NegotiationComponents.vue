@@ -31,18 +31,14 @@
     import './NegotiationComponents.scss'
     import { onMounted, ref } from "vue";
     import AppSection from "~/components/AppSection/AppSection.vue";
+    import api from '~/http/api'
 
-    const negotiation = ref([
-        { id: 1, status: 'Приглашен', vacancy: 'React front-end developer в Перфоманс Лаб', date: '5 декабря 2023' },
-        { id: 2, status: 'Отказ', vacancy: 'Frontend developer (react) в Лига Ставок', date: '4 декабря 2023' },
-        { id: 3, status: 'Резюме не просмотрено', vacancy: 'Разработчик сайтов (стажер) в Представительство Правительства Ярославской области', date: '2 декабря 2023' },
-        { id: 4, status: 'Отказ', vacancy: 'Frontend-разработчик в Сбер. IT', date: '28 ноября 2023' }
-    ]);
+    const negotiation = ref([]);
 
     onMounted(() => {
         const getNegotiationInfo = async () => {
-            // Placeholder for future server request
-            console.log(negotiation.value);
+            const data = await api.get('negotiations');
+            negotiation.value = data.responses
         }
 
         getNegotiationInfo();
